@@ -1,0 +1,48 @@
+<div id="mySidenav" class="sidenav" [ngStyle]="{ width: width }">
+  <!-- <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a> -->
+  <img src="./assets/images/users/avatar-1.jpg" class="nav-img" />
+  <h6 class="username">Username</h6>
+  <div class="divider"></div>
+  <ul>
+    <li class="menu-item">
+      <a class="menu" routerLink="/dashboard" routerLinkActive="active">
+        <i data-Feather="home" class="icon"></i>Dashboard</a
+      >
+    </li>
+    <li class="menu-item">
+      <a routerLink="/users" routerLinkActive="active">
+        <i data-Feather="user" class="icon"></i>Users</a
+      >
+    </li>
+    <li class="menu-item">
+      <a routerLink="/calendar" routerLinkActive="active"
+        ><i data-Feather="calendar" class="icon"></i>Calendar</a
+      >
+    </li>
+    <li class="menu-item">
+      <a routerLink="/chat" routerLinkActive="active"
+        ><i data-Feather="message-square" class="icon"></i>Chat</a
+      >
+    </li>
+    <li class="menu-item">
+      <a routerLink="/email" routerLinkActive="active"
+        ><i data-Feather="mail" class="icon"></i>Email</a
+      >
+    </li>
+    <li class="menu-item">
+      <a routerLink="/projects" routerLinkActive="active">
+        <i data-Feather="briefcase" class="icon"></i>Projects</a
+      >
+    </li>
+    <li class="menu-item">
+      <a routerLink="/task" routerLinkActive="active">
+        <i data-Feather="clipboard" class="icon"></i>Task</a
+      >
+    </li>
+    <li class="menu-item">
+      <a routerLink="/filemanager" routerLinkActive="active"
+        ><i data-Feather="file-plus" class="icon"></i>FileManager</a
+      >
+    </li>
+  </ul>
+</div>

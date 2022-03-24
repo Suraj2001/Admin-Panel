@@ -1,0 +1,40 @@
+@import "../../styles";
+$gray-100: #f8f9fa;
+$gray-700: #4b4b5a;
+$primary: #5369f8;
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.btn:focus,
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+// Date Range
+.custom-day {
+  text-align: center;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  vertical-align: middle;
+
+  &:hover {
+    background-color: $primary !important;
+    color: white;
+  }
+
+  &.range {
+    background: $primary !important;
+    border-color: $primary;
+    color: white;
+    // border-radius: 10px;
+  }
+
+  &.range.faded {
+    background-color: lighten($gray-300, 5%) !important;
+    color: $gray-700 !important;
+  }
+}

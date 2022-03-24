@@ -1,0 +1,68 @@
+<div class="card" style="padding: 20px">
+  <div class="row">
+    <div class="col-auto" style="margin-right: auto">
+      <h6>Update User Details</h6>
+    </div>
+    <div class="col-auto">
+      <button
+        type="button"
+        (click)="gotoUserList()"
+        style="border: none; background-color: white"
+      >
+        <i data-feather="x" appFeatherIcon style="width: 20px"></i>
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="updateUser()" [formGroup]="userForm1">
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label for="firstname">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstname"
+              name="firstname"
+              placeholder="First name"
+              formControlName="fname"
+            />
+          </div>
+          <div class="col">
+            <label for="lastname">Last Name</label>
+            <input
+              type="text"
+              id="lastname"
+              class="form-control"
+              name="lastname"
+              placeholder="Last name"
+              formControlName="lname"
+            />
+          </div>
+        </div>
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+          formControlName="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="contact">Contact No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="contact"
+          name="contact"
+          placeholder="Enter your phone number"
+          formControlName="contact"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+</div>

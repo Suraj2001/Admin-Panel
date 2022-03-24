@@ -1,0 +1,99 @@
+@import "../../styles";
+
+.top-nav {
+  background-color: white;
+  font-family: "IBM plex sans", sans-serif;
+  font-weight: lighter;
+  transition: 0.3s;
+  height: 70px;
+  border-bottom: 0.5px solid rgb(199, 199, 199);
+
+  .dropdown-menu {
+    box-shadow: 0 0.5rem 1rem rgba(black, 0.15);
+    animation-name: DropDownSlide;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    font-size: 0.8rem;
+    top: 100%;
+    margin-top: 18px;
+    border: none;
+    &.show {
+      top: 100% !important;
+    }
+
+    i {
+      display: inline-block;
+    }
+  }
+  .search {
+    border: none;
+    background-color: whitesmoke;
+    padding: 4px 14px 4px 14px;
+    border-radius: 5px;
+    input {
+      border: none;
+      background-color: whitesmoke;
+      font-size: 12px;
+      opacity: 0.7;
+      outline: none;
+    }
+    .search-btn {
+      border: none;
+      background-color: whitesmoke;
+      .icon {
+        width: 16px;
+        opacity: 0.4;
+      }
+    }
+  }
+}
+
+@keyframes DropDownSlide {
+  100% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(0);
+  }
+  0% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+.btn {
+  font-size: 14px;
+}
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+.menu-btn {
+  border: none;
+  background-color: transparent;
+  padding: 4px;
+}
+
+.top-bar-icon {
+  height: 20px;
+  color: #343a40;
+  fill: rgba(52, 58, 64, 0.12);
+}
+
+.nav-img {
+  height: 32px;
+  border-radius: 50px;
+}
+
+ul {
+  list-style-type: none;
+  margin-bottom: 0px;
+  padding-left: 0px;
+
+  li {
+    display: inline-block;
+    padding: 10px;
+  }
+}

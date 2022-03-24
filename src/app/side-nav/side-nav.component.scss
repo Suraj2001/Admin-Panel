@@ -1,0 +1,61 @@
+.sidenav {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-right: 0.5px solid rgb(199, 199, 199);
+  background-color: white;
+  overflow-x: hidden;
+  padding-top: 40px;
+  transition: 0.3s;
+  align-items: center;
+  font-family: "IBM plex sans", sans-serif;
+  ul {
+    list-style: none;
+    padding-left: 24px;
+  }
+}
+
+.username {
+  text-align: center;
+  padding-top: 20px;
+}
+.nav-img {
+  height: 70px;
+  border-radius: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu-item {
+  margin-bottom: 30px;
+  a {
+    font-size: 14px;
+    color: #3b3b3b;
+    transition: 0.3s;
+    text-decoration: none;
+    display: block;
+  }
+  a:hover {
+    color: #5369f8;
+  }
+  .active {
+    color: #5369f8;
+  }
+  li > a.active {
+    color: #5369f8;
+  }
+  .icon {
+    height: 20px;
+    margin-right: 20px;
+    padding-bottom: 4px;
+    fill: #f0f0f0;
+  }
+}
+
+.divider {
+  border-top: 1px solid #d8d8d8;
+  margin: 30px 14px 30px 14px;
+  height: 0px;
+}

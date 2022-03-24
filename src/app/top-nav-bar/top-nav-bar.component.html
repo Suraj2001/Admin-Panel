@@ -1,0 +1,77 @@
+<nav
+  class="navbar navbar-expand-lg justify-content-between top-nav"
+  [ngStyle]="{ 'margin-left': leftMargin }"
+>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <button class="menu-btn" (click)="toggleMenu()">
+        <i data-feather="menu" appFeatherIcon></i>
+      </button>
+    </li>
+    <li class="nav-item">
+      <div ngbDropdown class="dropdown1">
+        <button class="btn" id="dropdown" ngbDropdownToggle>
+          Create New
+          <i
+            data-feather="chevron-down"
+            appFeatherIcon
+            style="height: 14px"
+          ></i>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic">
+          <ng-container *ngFor="let option of createMenuOptions">
+            <button ngbDropdownItem>
+              <i class="{{ option.icon }} me-1"></i>
+              <span>{{ option.label }}</span>
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <ul>
+    <li class="nav-item">
+      <form class="search">
+        <input placeholder="Search..." #search name="search" /><button
+          class="search-btn"
+        >
+          <i data-feather="search" appFeatherIcon class="icon"></i>
+        </button>
+      </form>
+    </li>
+    <li class="nav-item">
+      <i data-feather="grid" appFeatherIcon class="top-bar-icon"></i>
+    </li>
+    <li class="nav-item">
+      <i data-feather="globe" appFeatherIcon class="top-bar-icon"></i>
+    </li>
+    <li class="nav-item">
+      <i data-feather="bell" appFeatherIcon class="top-bar-icon"></i>
+    </li>
+    <li class="nav-item">
+      <div ngbDropdown class="dropdown1">
+        <img src="./assets/images/users/avatar-1.jpg" class="nav-img" />
+        <button class="btn" id="dropdown" ngbDropdownToggle>
+          Username
+          <i
+            data-feather="chevron-down"
+            appFeatherIcon
+            class="top-bar-icon"
+          ></i>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic">
+          <ng-container *ngFor="let option of profileOptions">
+            <button ngbDropdownItem>
+              <i class="{{ option.icon }} me-1"></i>
+              <span>{{ option.label }}</span>
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </li>
+    <li>
+      <i data-feather="settings" appFeatherIcon class="top-bar-icon"></i>
+    </li>
+  </ul>
+</nav>
