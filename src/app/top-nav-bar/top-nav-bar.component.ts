@@ -1,12 +1,6 @@
-import {
-  AfterViewInit,
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-  ElementRef,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CreateNewMenuOption } from '../Models/create-new.model';
+import { LocationOptionItem } from '../Models/LocationOptionItem.model';
 import { ProfileOptionItem } from '../Models/profile-options.model';
 import { EventService } from '../services/event.service';
 
@@ -18,6 +12,7 @@ import { EventService } from '../services/event.service';
 export class TopNavBarComponent implements OnInit {
   createMenuOptions: CreateNewMenuOption[] = [];
   profileOptions: ProfileOptionItem[] = [];
+  createLocationOptions: LocationOptionItem[] = [];
   leftMargin: string = '250px';
   sidebarVisibility: boolean = true;
 
@@ -35,6 +30,7 @@ export class TopNavBarComponent implements OnInit {
   ngOnInit(): void {
     this._fetchMenus();
     this._fetchProfileOptions();
+    this._fetchLocationOptions();
   }
   ngAfterViewInit() {}
 
@@ -46,6 +42,13 @@ export class TopNavBarComponent implements OnInit {
       this.leftMargin = '250px';
       this.event.toggleSidebarVisibility();
     }
+  }
+  _fetchLocationOptions(): void {
+    this.createLocationOptions = [
+      { id: 1, label: 'Country', route: 'location/country' },
+      { id: 1, label: 'States', route: 'location/states' },
+      { id: 1, label: 'Cities', route: 'location/cities' },
+    ];
   }
 
   _fetchMenus(): void {
@@ -65,11 +68,7 @@ export class TopNavBarComponent implements OnInit {
         label: 'Revenue Report',
         icon: 'uil uil-chart-pie',
       },
-      {
-        id: 4,
-        label: 'Settings',
-        icon: 'uil uil-cog',
-      },
+
       {
         id: 4,
         label: 'Help & Support',
@@ -82,15 +81,15 @@ export class TopNavBarComponent implements OnInit {
     this.profileOptions = [
       {
         label: 'My Account',
-        icon: 'user',
+        icon: 'uil-user',
       },
       {
         label: 'Lock Screen',
-        icon: 'lock',
+        icon: 'uil-lock',
       },
       {
         label: 'Logout',
-        icon: 'log-out',
+        icon: 'uil-exit',
       },
     ];
   }

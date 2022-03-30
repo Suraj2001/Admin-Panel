@@ -1,0 +1,91 @@
+<table class="table mt-5">
+  <thead class="thead">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">States</th>
+      <th scope="col">Country</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let state of states">
+      <td>{{ state.id }}</td>
+      <td>{{ state.state }}</td>
+      <td>{{ state.country }}</td>
+      <td>
+        <div class="row">
+          <button
+            type="button"
+            class="btn btn-danger btn-sm"
+            data-toggle="modal"
+            (click)="openDialog(content, state)"
+          >
+            Delete
+          </button>
+          <button
+            type="button"
+            class="btn btn-success btn-sm"
+            (click)="openCountryDialog(countrycontent, state)"
+          >
+            Edit
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal Dialog Box For Deleting Countries -->
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Confirmation</h4>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure to delete the State Details?</p>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="d('Cross click')"
+    >
+      Cancel
+    </button>
+    <button type="button" class="btn btn-outline-dark" (click)="c('yes')">
+      Yes
+    </button>
+  </div>
+</ng-template>
+
+<!-- Modal Dialog Box For Editing Countries -->
+<ng-template #countrycontent let-model>
+  <div class="modal-header">
+    <h5 class="modal-title" id="modal-basic-title">Edit Country Details</h5>
+  </div>
+  <div class="modal-body">
+    <form (ngSubmit)="updateState()" [formGroup]="stateForm">
+      <div class="form-group">
+        <div class="col">
+          <label for="state">State</label>
+          <input
+            type="text"
+            id="state"
+            class="form-control"
+            name="state"
+            formControlName="state"
+          />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-outline-dark"
+          (click)="model.dismiss()"
+        >
+          Cancel
+        </button>
+        <button type="submit" class="btn btn-outline-dark">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

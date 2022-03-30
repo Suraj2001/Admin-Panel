@@ -9,7 +9,7 @@
       </button>
     </li>
     <li class="nav-item">
-      <div ngbDropdown class="dropdown1">
+      <div ngbDropdown class="dropdown">
         <button class="btn" id="dropdown" ngbDropdownToggle>
           Create New
           <i
@@ -19,9 +19,10 @@
           ></i>
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic">
-          <ng-container *ngFor="let option of createMenuOptions">
+          <ng-container *ngFor="let option of createMenuOptions; index as i">
+            <div *ngIf="i == 3" class="dropdown-divider"></div>
             <button ngbDropdownItem>
-              <i class="{{ option.icon }} me-1"></i>
+              <i class="{{ option.icon }}"></i>
               <span>{{ option.label }}</span>
             </button>
           </ng-container>
@@ -44,16 +45,28 @@
       <i data-feather="grid" appFeatherIcon class="top-bar-icon"></i>
     </li>
     <li class="nav-item">
-      <i data-feather="globe" appFeatherIcon class="top-bar-icon"></i>
+      <div ngbDropdown class="dropdown">
+        <button class="btn btn-none ps-0 pe-0" id="dropdown" ngbDropdownToggle>
+          <i data-feather="globe" appFeatherIcon class="top-bar-icon"></i>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic">
+          <ng-container *ngFor="let option of createLocationOptions">
+            <button ngbDropdownItem [routerLink]="[option.route]">
+              <span>{{ option.label }}</span>
+            </button>
+          </ng-container>
+        </div>
+      </div>
     </li>
+
     <li class="nav-item">
       <i data-feather="bell" appFeatherIcon class="top-bar-icon"></i>
     </li>
-    <li class="nav-item">
-      <div ngbDropdown class="dropdown1">
+    <li i class="nav-item">
+      <div ngbDropdown class="dropdown">
         <img src="./assets/images/users/avatar-1.jpg" class="nav-img" />
         <button class="btn" id="dropdown" ngbDropdownToggle>
-          Username
+          Coal Mike
           <i
             data-feather="chevron-down"
             appFeatherIcon
@@ -61,7 +74,8 @@
           ></i>
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic">
-          <ng-container *ngFor="let option of profileOptions">
+          <ng-container *ngFor="let option of profileOptions; index as i">
+            <div *ngIf="i == 2" class="dropdown-divider"></div>
             <button ngbDropdownItem>
               <i class="{{ option.icon }} me-1"></i>
               <span>{{ option.label }}</span>

@@ -1,0 +1,31 @@
+<div class="card" style="padding: 20px">
+  <h6 class="mb-4 header-title mt-0">Country Details</h6>
+  <form [formGroup]="stateForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <div class="row mb-3">
+        <div class="col">
+          <label for="name">Country Name</label>
+          <select class="form-control" id="name" formControlName="countryid">
+            <option value="">Select your option</option>
+            <option *ngFor="let country of countryList" [ngValue]="country.id">
+              {{ country.name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="col">
+          <label for="state">State</label>
+          <input
+            type="text"
+            id="state"
+            class="form-control"
+            name="state"
+            placeholder="Enter Name of the State"
+            formControlName="state"
+          />
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Entity</button>
+  </form>
+</div>

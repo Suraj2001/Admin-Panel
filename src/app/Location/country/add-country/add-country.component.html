@@ -1,0 +1,67 @@
+<div class="card" style="padding: 20px">
+  <h6 class="mb-4 header-title mt-0">Country Details</h6>
+  <form (ngSubmit)="addCountry()" [formGroup]="countryForm">
+    <div class="form-group">
+      <div class="row mb-3">
+        <div class="col">
+          <label for="name">Country Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Enter Country Name"
+            formControlName="name"
+          />
+        </div>
+        <div class="col">
+          <label for="alias">Country Alias</label>
+          <input
+            type="text"
+            id="alias"
+            class="form-control"
+            name="alias"
+            placeholder="Enter Country Alias"
+            formControlName="alias"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="currency">Currency</label>
+          <input
+            type="currency"
+            class="form-control"
+            id="currency"
+            name="currency"
+            placeholder="Currency of the country"
+            formControlName="currency"
+          />
+        </div>
+        <div class="col">
+          <label for="code">Country Code</label>
+          <input
+            type="text"
+            class="form-control"
+            id="code"
+            name="code"
+            placeholder="Enter Country code"
+            formControlName="code"
+          />
+        </div>
+        <div class="col">
+          <label for="population">Population</label>
+          <input
+            type="text"
+            class="form-control"
+            id="population"
+            name="population"
+            placeholder="Enter population of the country"
+            formControlName="population"
+          />
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Entity</button>
+  </form>
+</div>

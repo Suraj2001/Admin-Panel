@@ -1,0 +1,13 @@
+<div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+  <button
+    class="btn btn-none me-4"
+    id="dropdownManual"
+    ngbDropdownAnchor
+    (focus)="myDrop.open()"
+  >
+    State
+  </button>
+  <div ngbDropdownMenu aria-labelledby="dropdownManual">
+    <button ngbDropdownItem>Country</button>
+  </div>
+</div>

@@ -8,15 +8,15 @@ import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { FeatherIconDirective } from './feather-icons.directive';
-import { StatisticChartWidgetComponent } from './statistic-chart-widget/statistic-chart-widget.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { UsersComponent } from './UserPage/users/users.component';
 import { AdminDisplayComponent } from './admin-display/admin-display.component';
 import { AddUserComponent } from './UserPage/add-user/add-user.component';
 import { UserListComponent } from './UserPage/user-list/user-list.component';
-import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UpdateUserComponent } from './UserPage/update-user/update-user.component';
+import { DropdownComponent } from './Components/dropdown/dropdown.component';
+import { LocationModule } from './Location/location.module';
 
 @NgModule({
   declarations: [
@@ -25,21 +25,21 @@ import { UpdateUserComponent } from './UserPage/update-user/update-user.componen
     TopNavBarComponent,
     SideNavComponent,
     FeatherIconDirective,
-    StatisticChartWidgetComponent,
     UsersComponent,
     AdminDisplayComponent,
     AddUserComponent,
     UserListComponent,
     UpdateUserComponent,
+    DropdownComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     NgApexchartsModule,
-    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    LocationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

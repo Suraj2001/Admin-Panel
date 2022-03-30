@@ -11,6 +11,7 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class UserListComponent implements OnInit {
   users?: User[];
+  data?: String;
 
   constructor(
     private router: Router,
@@ -26,13 +27,15 @@ export class UserListComponent implements OnInit {
 
   openDialog(content: any, user: User) {
     console.log(content);
-    this.modalService
-      .open(content, { ariaLabelledBy: 'exampleModalLabel' })
-      .result.then((result) => {
-        if (result === 'yes') {
-          this.deleteUser(user);
-        }
-      });
+    const modalRef = this.modalService.open(content, {
+      backdrop: 'static',
+    });
+    this.data = `${user.fname} ${user.lname}`;
+    modalRef.result.then((result) => {
+      if (result === 'yes') {
+        this.deleteUser(user);
+      }
+    });
   }
 
   deleteUser(user: User) {

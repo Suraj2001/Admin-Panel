@@ -1,14 +1,17 @@
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap");
 /* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
   font-family: "IBM plex sans", sans-serif;
-  .btn:focus,
-  .btn:active {
-    outline: none !important;
-    box-shadow: none;
-  }
 }
-
-/* Importing Bootstrap SCSS file. */
-@import "~bootstrap/scss/bootstrap";
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap");
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+td {
+  font-family: "IBM plex sans", sans-serif;
+  font-size: 14px;
+}

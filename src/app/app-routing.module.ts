@@ -5,6 +5,14 @@ import { UsersComponent } from './UserPage/users/users.component';
 import { AddUserComponent } from './UserPage/add-user/add-user.component';
 import { UserListComponent } from './UserPage/user-list/user-list.component';
 import { UpdateUserComponent } from './UserPage/update-user/update-user.component';
+import { ManageLocationComponent } from './Location/manage-location/manage-location.component';
+import { CountryComponent } from './Location/country/country.component';
+import { StatesComponent } from './Location/states/states.component';
+import { CitiesComponent } from './Location/cities/cities.component';
+import { CountryListComponent } from './Location/country/country-list/country-list.component';
+import { AddCountryComponent } from './Location/country/add-country/add-country.component';
+import { AddStateComponent } from './Location/states/add-state/add-state.component';
+import { StateListComponent } from './Location/states/state-list/state-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'users', pathMatch: 'full' },
