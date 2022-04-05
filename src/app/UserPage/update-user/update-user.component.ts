@@ -19,8 +19,8 @@ export class UpdateUserComponent implements OnInit {
   userId?: number;
   user?: User;
   userForm1 = new FormGroup({
-    fname: new FormControl(''),
-    lname: new FormControl(''),
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
     email: new FormControl(''),
     contact: new FormControl(''),
   });
@@ -37,8 +37,8 @@ export class UpdateUserComponent implements OnInit {
 
   getUserDetails(user: User) {
     this.userForm1 = new FormGroup({
-      fname: new FormControl(user.fname),
-      lname: new FormControl(user.lname),
+      firstName: new FormControl(user.firstName),
+      lastName: new FormControl(user.lastName),
       email: new FormControl(user.email),
       contact: new FormControl(user.contact),
     });
@@ -50,10 +50,9 @@ export class UpdateUserComponent implements OnInit {
       .subscribe((result) => {
         this.gotoUserList();
       });
-    // alert(`User with id ${this.user?.id} updated!`);
   }
 
   gotoUserList() {
-    this.router.navigate(['/users/userList']);
+    this.router.navigate(['/display/users/userList']);
   }
 }

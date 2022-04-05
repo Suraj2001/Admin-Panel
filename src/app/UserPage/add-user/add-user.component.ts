@@ -15,8 +15,8 @@ export class AddUserComponent implements OnInit {
   }
 
   userForm = new FormGroup({
-    fname: new FormControl(''),
-    lname: new FormControl(''),
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
     email: new FormControl(''),
     contact: new FormControl(''),
   });
@@ -24,12 +24,13 @@ export class AddUserComponent implements OnInit {
     this.userForm;
   }
   addUser() {
+    console.log(this.userForm.value);
     this.userService.save(this.userForm.value).subscribe((result) => {
       this.gotoUserList();
     });
     this.userForm.reset();
   }
   gotoUserList() {
-    this.router.navigate(['/users/userList']);
+    this.router.navigate(['/display/users/userList']);
   }
 }

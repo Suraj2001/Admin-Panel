@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../services/authentication.service';
 import { EventService } from '../services/event.service';
 
 @Component({
@@ -10,7 +11,10 @@ export class AdminDisplayComponent implements OnInit {
   leftMargin = '250px';
   sidebarVisibility: boolean = true;
 
-  constructor(private event: EventService) {
+  constructor(
+    private event: EventService,
+    private authService: AuthenticationService
+  ) {
     this.event.sidebarVisibilityChange.subscribe((value) => {
       this.sidebarVisibility = value;
       if (this.sidebarVisibility) {
@@ -21,5 +25,7 @@ export class AdminDisplayComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.hasTokenExpired();
+  }
 }

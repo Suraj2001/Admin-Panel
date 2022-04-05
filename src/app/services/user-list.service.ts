@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../Models/users.models';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +19,7 @@ export class UserListService {
   }
 
   public save(user: User) {
+    console.log(user);
     return this.http.post<User>(this.usersUrl + 'users', user);
   }
 

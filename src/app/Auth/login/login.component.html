@@ -1,0 +1,68 @@
+<ngb-toast
+  class="bg-danger text-light"
+  [autohide]="true"
+  [delay]="2000"
+  *ngIf="showToast"
+  style="position: absolute; top: 30px; right: 30px; z-index: 10"
+>
+  {{ alert }}
+</ngb-toast>
+<div
+  class="card shadow mx-auto"
+  style="width: 1200px; margin-top: 4%; position: relative"
+>
+  <div class="row">
+    <div class="col p-5">
+      <div class="card-body">
+        <strong><h5 class="mb-0 mt-3">Welcome Back!</h5></strong>
+        <p class="card-text text-muted mt-2 mb-4">
+          Enter your email address and password to access admin panel
+        </p>
+        <form (submit)="onSubmit()" [formGroup]="userAuth">
+          <div class="col mt-5">
+            <label for="username">Username</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text text-muted" id="basic-addon1"
+                  ><i data-feather="user" appFeatherIcon></i
+                ></span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                placeholder="Username"
+                formControlName="username"
+              />
+            </div>
+          </div>
+          <div class="col mt-2">
+            <label for="password">Password</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text text-muted" id="basic-addon1"
+                  ><i data-feather="lock" appFeatherIcon></i
+                ></span>
+              </div>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                formControlName="password"
+              />
+            </div>
+          </div>
+          <button class="btn btn-primary mt-5">Log In</button>
+        </form>
+      </div>
+    </div>
+    <img
+      class="col"
+      src="./assets/images/auth-bg.jpg"
+      alt="Card image cap"
+      height="650px"
+      width="700px"
+    />
+  </div>
+</div>

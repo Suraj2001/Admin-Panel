@@ -21,15 +21,16 @@
   padding-top: 20px;
 }
 .nav-img {
-  height: 70px;
-  border-radius: 50px;
+  height: 40px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 100px;
 }
 
 .menu-item {
   margin-bottom: 30px;
+  margin-left: 20px;
   a {
     font-size: 14px;
     color: #3b3b3b;
@@ -48,7 +49,7 @@
   }
   .icon {
     height: 20px;
-    margin-right: 20px;
+    margin-right: 30px;
     padding-bottom: 4px;
     fill: #f0f0f0;
   }

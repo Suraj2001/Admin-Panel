@@ -30,7 +30,7 @@ export class UserListComponent implements OnInit {
     const modalRef = this.modalService.open(content, {
       backdrop: 'static',
     });
-    this.data = `${user.fname} ${user.lname}`;
+    this.data = `${user.firstName} ${user.lastName}`;
     modalRef.result.then((result) => {
       if (result === 'yes') {
         this.deleteUser(user);
@@ -45,6 +45,6 @@ export class UserListComponent implements OnInit {
     );
   }
   editUser(user: User) {
-    this.router.navigate(['/users/editUser', user.id]);
+    this.router.navigate(['/display/users/editUser', user.id]);
   }
 }

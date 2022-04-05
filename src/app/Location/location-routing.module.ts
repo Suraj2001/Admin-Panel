@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminDisplayComponent } from '../admin-display/admin-display.component';
 import { CitiesComponent } from './cities/cities.component';
 import { AddCountryComponent } from './country/add-country/add-country.component';
 import { CountryListComponent } from './country/country-list/country-list.component';
@@ -11,31 +12,37 @@ import { StatesComponent } from './states/states.component';
 
 const routes: Routes = [
   {
-    path: 'location',
-    component: ManageLocationComponent,
+    path: 'display',
+    component: AdminDisplayComponent,
     children: [
-      { path: '', redirectTo: 'country', pathMatch: 'full' },
       {
-        path: 'country',
-        component: CountryComponent,
+        path: 'location',
+        component: ManageLocationComponent,
         children: [
-          { path: '', redirectTo: 'addCountry', pathMatch: 'full' },
-          { path: 'addCountry', component: AddCountryComponent },
-          { path: 'countryList', component: CountryListComponent },
+          { path: '', redirectTo: 'country', pathMatch: 'full' },
+          {
+            path: 'country',
+            component: CountryComponent,
+            children: [
+              { path: '', redirectTo: 'addCountry', pathMatch: 'full' },
+              { path: 'addCountry', component: AddCountryComponent },
+              { path: 'countryList', component: CountryListComponent },
+            ],
+          },
+          {
+            path: 'states',
+            component: StatesComponent,
+            children: [
+              { path: '', redirectTo: 'addState', pathMatch: 'full' },
+              { path: 'addState', component: AddStateComponent },
+              { path: 'stateList', component: StateListComponent },
+            ],
+          },
+          {
+            path: 'cities',
+            component: CitiesComponent,
+          },
         ],
-      },
-      {
-        path: 'states',
-        component: StatesComponent,
-        children: [
-          { path: '', redirectTo: 'addState', pathMatch: 'full' },
-          { path: 'addState', component: AddStateComponent },
-          { path: 'stateList', component: StateListComponent },
-        ],
-      },
-      {
-        path: 'cities',
-        component: CitiesComponent,
       },
     ],
   },

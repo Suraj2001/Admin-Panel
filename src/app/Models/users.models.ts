@@ -1,7 +1,9 @@
 export class User {
   id?: number;
   contact?: Number;
-  fname?: String;
+  firstName?: String;
   email?: String;
-  lname?: String;
+  lastName?: String;
+  password?: String;
+  status?: number;
 }
