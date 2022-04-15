@@ -1,0 +1,118 @@
+<div class="card">
+  <div class="card-body">
+    <full-calendar #calendar [options]="calendarOptions"></full-calendar>
+  </div>
+</div>
+<!-- Modal Dialog Box For Editing Countries -->
+<ng-template #content let-model>
+  <div class="modal-header">
+    <h5 class="modal-title" id="modal-basic-title">New Task</h5>
+    <a
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="model.dismiss()"
+      style="font-size: 30px; text-decoration: none; color: black"
+    >
+      <span aria-hidden="true">&times;</span>
+    </a>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="taskForm" #eventForm="ngForm">
+      <div class="form-group">
+        <div class="row mb-3">
+          <div class="col">
+            <label for="name">Task</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Assignment acomplishment by tomorrow"
+              formControlName="title"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="startDate">Start Date</label>
+            <input
+              type="date"
+              id="startDate"
+              class="form-control"
+              name="startDate"
+              formControlName="start"
+            />
+          </div>
+          <div class="col">
+            <label for="endDate">End Date</label>
+            <input
+              type="date"
+              class="form-control"
+              id="endDate"
+              name="endDate"
+              formControlName="end"
+            />
+          </div>
+          <div class="col">
+            <label for="priority">Priority</label>
+            <select
+              class="form-control"
+              id="priority"
+              formControlName="priority"
+              (change)="changePriority($event)"
+              [(ngModel)]="prioritySelected"
+              [ngStyle]="{
+                color: priorityColor
+              }"
+            >
+              <i
+                data-feather="chevron-down"
+                appFeatherIcon
+                class="top-bar-icon"
+              ></i>
+              <option
+                *ngFor="let priority of priorityList"
+                [value]="priority.id"
+                [disabled]="priority.isDisabled"
+                [ngStyle]="{
+                  color: priority.color
+                }"
+              >
+                <div class="col-4">{{ priority.title }}</div>
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div *ngIf="isEditable">
+          <button
+            (click)="updateTask()"
+            type="submit"
+            class="btn btn-outline-success"
+            style="margin-right: 5px"
+          >
+            Update
+          </button>
+          <button
+            (click)="deleteTask()"
+            type="submit"
+            class="btn btn-outline-danger ml-2"
+          >
+            Delete
+          </button>
+        </div>
+        <div *ngIf="!isEditable">
+          <button
+            (click)="saveTask()"
+            type="submit"
+            class="btn btn-outline-success"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>

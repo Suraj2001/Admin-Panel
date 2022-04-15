@@ -19,6 +19,10 @@ import { DropdownComponent } from './Components/dropdown/dropdown.component';
 import { LocationModule } from './Location/location.module';
 import { LoginComponent } from './Auth/login/login.component';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { ForgotPassComponent } from './Auth/forgot-pass/forgot-pass.component';
+import { AuthenticationComponent } from './Auth/authentication/authentication.component';
+import { ResetPassComponent } from './Auth/reset-pass/reset-pass.component';
+import { CalendarModule } from './Calendar/calendar.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,9 @@ import { AuthInterceptor } from './services/auth.interceptor';
     UpdateUserComponent,
     DropdownComponent,
     LoginComponent,
+    ForgotPassComponent,
+    AuthenticationComponent,
+    ResetPassComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +50,7 @@ import { AuthInterceptor } from './services/auth.interceptor';
     ReactiveFormsModule,
     HttpClientModule,
     LocationModule,
+    CalendarModule,
   ],
   providers: [
     [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],

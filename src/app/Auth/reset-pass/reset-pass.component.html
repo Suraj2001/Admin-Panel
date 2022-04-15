@@ -1,0 +1,53 @@
+<div class="container">
+  <h5>Reset Your Password</h5>
+
+  <div class="row">
+    <form (submit)="resetPass()" [formGroup]="resetPassForm">
+      <div class="col mt-1">
+        <label for="newPass">New Password</label>
+        <div class="input-group mb-3">
+          <input
+            type="password"
+            class="form-control"
+            id="newPass"
+            placeholder="Enter new password"
+            formControlName="newPass"
+          />
+        </div>
+      </div>
+      <div class="col mt-1">
+        <label for="confirmPass">Confirm Password</label>
+        <div class="input-group mb-3">
+          <input
+            type="password"
+            class="form-control"
+            id="confirmPass"
+            placeholder="Confirm Password"
+            formControlName="confirmPass"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary mt-4">
+          Reset Password
+        </button>
+      </div>
+      <div class="button">
+        <button class="btn btn-outline-none" type="button" routerLink="../..">
+          <h6>Back To Login</h6>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<ngb-toast
+  [class]="type"
+  [autohide]="true"
+  [delay]="2000"
+  *ngIf="showToast"
+  style="position: fixed; top: 30px; right: 30px; z-index: 10"
+>
+  {{ alert }}
+</ngb-toast>

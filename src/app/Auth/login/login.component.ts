@@ -15,21 +15,21 @@ export class LoginComponent implements OnInit {
   userDetails?: User;
   alert?: String;
   showToast = false;
+  showForgotPass = false;
   submitted = false;
 
   userAuth = new FormGroup({
-    username: new FormControl(null, [
-      Validators.required,
-      Validators.minLength(1),
-    ]),
+    username: new FormControl(null, Validators.required),
     password: new FormControl(null, Validators.required),
   });
+
   constructor(
     private authService: AuthenticationService,
     private route: Router
   ) {}
 
   ngOnInit(): void {
+    localStorage.removeItem('token');
     this.userAuth;
   }
 

@@ -1,0 +1,55 @@
+<div class="card">
+  <div class="card-body">
+    <table class="table">
+      <thead class="thead">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Task</th>
+          <th scope="col">Finish by</th>
+          <th scope="col">Priority</th>
+          <!-- <th scope="col">Actions</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of calendarEventsData">
+          <td>
+            <input
+              type="checkbox"
+              (click)="checkbox(event.id, $event)"
+              [checked]="event.id == taskId"
+              (change)="changeBox($event)"
+            />
+          </td>
+          <td
+            [style]="{
+              'text-decoration':
+                event.id == taskId && isChecked ? 'line-through' : null
+            }"
+          >
+            {{ event.title }}
+          </td>
+          <td>{{ event.end }}</td>
+          <td>
+            <a
+              [style]="{ 'background-color': event.backgroundColor }"
+              style="color: white; opacity: 0.8"
+              >{{ getPriority(event["priority"]) }}</a
+            >
+          </td>
+          <td>
+            <div class="row">
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                data-toggle="modal"
+                (click)="deleteTask(event)"
+              >
+                Delete
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

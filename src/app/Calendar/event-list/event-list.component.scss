@@ -1,0 +1,19 @@
+button {
+    width: fit-content;
+    margin-left: 10px;
+    padding-bottom: 4px;
+    font-size: smaller;
+}
+
+
+a {
+  display: inline-block;
+  height: 30px; /*sets height of element*/
+  background: cornflowerblue; /*sets the background of this element (here a solid colour)*/
+  transition: all 0.6s; /*sets a transition (for hover effect)*/
+  padding-left: 10px; /*sets 'padding'*/
+  padding-right: 10px; /*sets 'padding'*/
+  line-height: 30px; /*for this, it sets vertical alignment*/
+  color: white;
+  border-radius: 3px;
+}

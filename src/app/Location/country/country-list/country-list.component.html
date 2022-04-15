@@ -1,45 +1,49 @@
-<table class="table mt-5">
-  <thead class="thead">
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Alias</th>
-      <th scope="col">Name</th>
-      <th scope="col">Country Code</th>
-      <th scope="col">Currency</th>
-      <th scope="col">Population</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let country of countries">
-      <td>{{ country.id }}</td>
-      <td>{{ country.alias }}</td>
-      <td>{{ country.name }}</td>
-      <td>{{ country.code }}</td>
-      <td>{{ country.currency }}</td>
-      <td>{{ country.population }} CR</td>
-      <td>
-        <div class="row">
-          <button
-            type="button"
-            class="btn btn-danger btn-sm"
-            data-toggle="modal"
-            (click)="openDialog(content, country)"
-          >
-            Delete
-          </button>
-          <button
-            type="button"
-            class="btn btn-success btn-sm"
-            (click)="openCountryDialog(countrycontent, country)"
-          >
-            Edit
-          </button>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="card">
+  <div class="card-body">
+    <table class="table">
+      <thead class="thead">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Alias</th>
+          <th scope="col">Name</th>
+          <th scope="col">Country Code</th>
+          <th scope="col">Currency</th>
+          <th scope="col">Population</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let country of countries">
+          <td>{{ country.id }}</td>
+          <td>{{ country.alias }}</td>
+          <td>{{ country.name }}</td>
+          <td>{{ country.code }}</td>
+          <td>{{ country.currency }}</td>
+          <td>{{ country.population }} CR</td>
+          <td>
+            <div class="row">
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                data-toggle="modal"
+                (click)="openDialog(content, country)"
+              >
+                Delete
+              </button>
+              <button
+                type="button"
+                class="btn btn-success btn-sm"
+                (click)="openCountryDialog(countrycontent, country)"
+              >
+                Edit
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <!-- Modal Dialog Box For Deleting Countries -->
 <ng-template #content let-c="close" let-d="dismiss">

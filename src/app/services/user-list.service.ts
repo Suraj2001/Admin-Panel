@@ -19,7 +19,6 @@ export class UserListService {
   }
 
   public save(user: User) {
-    console.log(user);
     return this.http.post<User>(this.usersUrl + 'users', user);
   }
 

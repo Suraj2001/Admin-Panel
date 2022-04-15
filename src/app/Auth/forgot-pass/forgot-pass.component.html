@@ -1,0 +1,55 @@
+<h6>Forgot Password?</h6>
+<p class="card-text text-muted mt-2 mb-4">
+  Enter your email address and we'll send you an email with instructions to
+  reset your password.
+</p>
+<form (submit)="onForgotPassSubmit()" [formGroup]="forgotPass">
+  <div class="col mt-5">
+    <label for="email">Email Address</label>
+    <div class="input-group mb-4">
+      <div class="input-group-prepend">
+        <span class="input-group-text text-muted" id="basic-addon1"
+          ><i data-feather="mail" appFeatherIcon></i
+        ></span>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        placeholder="hello@gmail.com"
+        formControlName="mail"
+      />
+    </div>
+  </div>
+  <form *ngIf="showOtp" (submit)="otpSubmit()" [formGroup]="otpForm">
+    <div class="col mt-3">
+      <label for="otp">Enter OTP</label>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="otp"
+          placeholder="Verify OTP"
+          formControlName="otp"
+        />
+      </div>
+    </div>
+    <button *ngIf="showOtp" class="btn btn-primary mt-4">Submit</button>
+  </form>
+  <button *ngIf="!showOtp" class="btn btn-primary mt-4">Get Email</button>
+  <div class="button">
+    <button class="btn btn-outline-none" type="button" routerLink="..">
+      <h6>Back To Login</h6>
+    </button>
+  </div>
+</form>
+
+<ngb-toast
+  [class]="type"
+  [autohide]="true"
+  [delay]="2000"
+  *ngIf="showToast"
+  style="position: fixed; top: 30px; right: 30px; z-index: 10"
+>
+  {{ alert }}
+</ngb-toast>

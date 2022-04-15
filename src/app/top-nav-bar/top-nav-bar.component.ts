@@ -121,7 +121,7 @@ export class TopNavBarComponent implements OnInit {
       }
       case 2: {
         this.authService.logout();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/authentication']);
         break;
       }
 

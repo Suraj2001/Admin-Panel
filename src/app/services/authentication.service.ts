@@ -62,4 +62,21 @@ export class AuthenticationService {
   setUserDetails(value: User) {
     localStorage.setItem('user', JSON.stringify(value));
   }
+
+  forgotPassword(email: Map<String, String>) {
+    return this.http.post<Map<String, String>>(
+      this.baseUrl + 'forgotPass',
+      email
+    );
+  }
+  verifyOtp(otp: Map<String, String>) {
+    return this.http.post<Map<String, String>>(this.baseUrl + 'verifyotp', otp);
+  }
+
+  resetPassword(value: any) {
+    return this.http.post<Map<String, String>>(
+      this.baseUrl + 'resetpassword',
+      value
+    );
+  }
 }

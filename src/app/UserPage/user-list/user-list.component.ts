@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserListService } from '../../services/user-list.service';
 import { User } from '../../Models/users.models';
-import { AddUserComponent } from '../add-user/add-user.component';
 import { Router } from '@angular/router';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',

@@ -8,10 +8,22 @@ import { UpdateUserComponent } from './UserPage/update-user/update-user.componen
 import { LoginComponent } from './Auth/login/login.component';
 import { AdminDisplayComponent } from './admin-display/admin-display.component';
 import { AuthGuard } from './services/auth.guard';
+import { ForgotPassComponent } from './Auth/forgot-pass/forgot-pass.component';
+import { AuthenticationComponent } from './Auth/authentication/authentication.component';
+import { ResetPassComponent } from './Auth/reset-pass/reset-pass.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'authentication', pathMatch: 'full' },
+  {
+    path: 'authentication',
+    component: AuthenticationComponent,
+    children: [
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: 'login', component: LoginComponent },
+      { path: 'forgotPass', component: ForgotPassComponent },
+      { path: 'resetPass/:mail', component: ResetPassComponent },
+    ],
+  },
   {
     path: 'display',
     component: AdminDisplayComponent,
@@ -31,7 +43,7 @@ const routes: Routes = [
       },
 
       { path: 'email', component: DashboardComponent },
-      { path: 'calendar', component: DashboardComponent },
+      // { path: 'calendar', component: CalendarComponent },
       { path: 'chat', component: DashboardComponent },
       { path: 'projects', component: DashboardComponent },
       { path: 'task', component: DashboardComponent },

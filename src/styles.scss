@@ -5,6 +5,10 @@
 body {
   margin: 0;
   font-family: "IBM plex sans", sans-serif;
+  h5{
+    font-family: 'IBM Plex Sans'; letter-spacing: 1px;
+    color: #000;
+  }
 }
 .btn:focus,
 .btn:active {
