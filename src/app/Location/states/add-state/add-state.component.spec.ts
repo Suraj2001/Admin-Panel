@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddStateComponent } from './add-state.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterModule } from '@angular/router';
 
 describe('AddStateComponent', () => {
   let component: AddStateComponent;
@@ -8,9 +10,9 @@ describe('AddStateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddStateComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule, RouterModule.forRoot([])],
+      declarations: [AddStateComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

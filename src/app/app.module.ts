@@ -7,7 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SideNavComponent } from './side-nav/side-nav.component';
-import { FeatherIconDirective } from './feather-icons.directive';
+import { FeatherIconsDirective } from './feather-icons.directive';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { UsersComponent } from './UserPage/users/users.component';
 import { AdminDisplayComponent } from './admin-display/admin-display.component';
@@ -23,14 +23,15 @@ import { ForgotPassComponent } from './Auth/forgot-pass/forgot-pass.component';
 import { AuthenticationComponent } from './Auth/authentication/authentication.component';
 import { ResetPassComponent } from './Auth/reset-pass/reset-pass.component';
 import { CalendarModule } from './Calendar/calendar.module';
-
+import { RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     TopNavBarComponent,
     SideNavComponent,
-    FeatherIconDirective,
+    FeatherIconsDirective,
     UsersComponent,
     AdminDisplayComponent,
     AddUserComponent,
@@ -51,6 +52,8 @@ import { CalendarModule } from './Calendar/calendar.module';
     HttpClientModule,
     LocationModule,
     CalendarModule,
+    RouterModule.forRoot([]),
+    RouterTestingModule,
   ],
   providers: [
     [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],

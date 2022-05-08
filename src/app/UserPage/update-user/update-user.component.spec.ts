@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UpdateUserComponent } from './update-user.component';
+import { RouterModule } from '@angular/router';
 
 describe('UpdateUserComponent', () => {
   let component: UpdateUserComponent;
@@ -8,9 +9,8 @@ describe('UpdateUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UpdateUserComponent ]
-    })
-    .compileComponents();
+      declarations: [UpdateUserComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

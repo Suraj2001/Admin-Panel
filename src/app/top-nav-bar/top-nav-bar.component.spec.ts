@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TopNavBarComponent } from './top-nav-bar.component';
+import { RouterModule } from '@angular/router';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('TopNavBarComponent', () => {
   let component: TopNavBarComponent;
@@ -8,9 +10,9 @@ describe('TopNavBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TopNavBarComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule, RouterModule.forRoot([])],
+      declarations: [TopNavBarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

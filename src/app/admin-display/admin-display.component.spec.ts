@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdminDisplayComponent } from './admin-display.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterModule } from '@angular/router';
 
 describe('AdminDisplayComponent', () => {
   let component: AdminDisplayComponent;
@@ -8,9 +10,9 @@ describe('AdminDisplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminDisplayComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule, RouterModule.forRoot([])],
+      declarations: [AdminDisplayComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EventListComponent } from './event-list.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('EventListComponent', () => {
   let component: EventListComponent;
@@ -8,9 +9,9 @@ describe('EventListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EventListComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule],
+      declarations: [EventListComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

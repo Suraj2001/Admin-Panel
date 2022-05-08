@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ForgotPassComponent } from './forgot-pass.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterModule } from '@angular/router';
 
 describe('ForgotPassComponent', () => {
   let component: ForgotPassComponent;
@@ -8,9 +10,9 @@ describe('ForgotPassComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ForgotPassComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule, RouterModule.forRoot([])],
+      declarations: [ForgotPassComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

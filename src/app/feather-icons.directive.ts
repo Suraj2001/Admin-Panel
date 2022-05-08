@@ -4,7 +4,7 @@ import * as feather from 'feather-icons';
 @Directive({
   selector: '[appFeatherIcon]',
 })
-export class FeatherIconDirective {
+export class FeatherIconsDirective {
   constructor() {}
 
   ngAfterViewInit() {

@@ -46,7 +46,7 @@ export class AuthenticationService {
       const expiry = JSON.parse(atob(token.split('.')[1])).exp;
       if (Math.floor(new Date().getTime() / 1000) >= expiry) {
         localStorage.removeItem('token');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/authentication/login']);
       }
     }
   }
